@@ -6,8 +6,8 @@ const router = express.Router()
 //rotas do usuário
 router.get('/',buscarTodosOsClientes)
 router.get('/:id', buscarUmCliente)
-router.post('/', criarCliente)
-router.patch('/editar/:id', editarCliente)
+router.post('/criar', criarCliente)
+router.put('/editar/:id', editarCliente)
 router.delete('/delete/:id', deletarCliente)
 
 export default router
