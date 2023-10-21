@@ -4,10 +4,10 @@ import { criarCliente, buscarTodosOsClientes, buscarUmCliente, editarCliente, de
 const router = express.Router()
 
 //rotas do usuário
-router.post('/', criarCliente)
 router.get('/',buscarTodosOsClientes)
 router.get('/:id', buscarUmCliente)
-router.patch('/:id', editarCliente)
-router.delete('/:id', deletarCliente)
+router.post('/post/', criarCliente)
+router.patch('/editar/:id', editarCliente)
+router.delete('/delete/:id', deletarCliente)
 
 export default router
