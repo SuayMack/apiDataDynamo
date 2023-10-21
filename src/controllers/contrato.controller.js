@@ -4,7 +4,7 @@ import { errorHandler } from "../utils/error.js"
 export const criarContrato = async (req, res, next) => {
     try {
       const response = await ContratoModel.create(req.body)
-      res.status(201).json(response)
+      res.status(201).json(response + ' Contrato criado com sucesso!')
       console.log(response)
     } catch (error) {
       res.status(400).json(error.message)

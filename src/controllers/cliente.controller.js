@@ -2,13 +2,17 @@ import ClienteModel from './../models/cliente.model.js'
 import { errorHandler } from './../utils/error.js';
 
 export const criarCliente = async (req, res, next) => {
-  try {
+  
+  try { 
     const { email } = req.body
     let cliente = await ClienteModel.findOne({ email })
-    if(cliente) return next(errorHandler(404, 'Cliente já cadastrado!'))
-    
-    const response = await ClienteModel.create(req.body)
-    res.status(201).json('Cliente cadastrado com sucesso!',response._id)
+    if(cliente) {
+      return (res.status(400).json({message: "Cliente já cadastrado!"}))
+    }else{
+      const response = await ClienteModel.create(req.body)
+      res.status(201).json('Cliente cadastrado com sucesso!')
+      console.log(response)
+    }
   } catch (error) {
     next(errorHandler(404, 'Erro ao criar Cliente!'))
   }

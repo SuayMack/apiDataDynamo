@@ -4,8 +4,8 @@ import { criarContrato, buscarTodosOsContratos, buscarUmContrato, editarContrato
 const router = express.Router()
 
 //rotas do usuário
-router.post('/', criarContrato)
 router.get('/',buscarTodosOsContratos)
+router.post('/post', criarContrato)
 router.get('/:id', buscarUmContrato)
 router.patch('/:id', editarContrato)
 router.delete('/:id', deletarContrato)
