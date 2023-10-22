@@ -5,6 +5,7 @@ import cors from "cors"
 
 import contratoRoute from './src/routes/contrato.route.js'
 import clienteRoute from './src/routes/cliente.route.js'
+import loginRoute from './src/routes/login.route.js'
 
 config()
 
@@ -29,3 +30,4 @@ mongoose.connect(`mongodb+srv://${USER_DB}:${PASSWORD}@${CLUSTER}.${DATABASE}.mo
 
 app.use('/contrato', contratoRoute)
 app.use('/cliente', clienteRoute)
+app.use('/login', loginRoute)
