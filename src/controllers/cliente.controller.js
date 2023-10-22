@@ -19,10 +19,6 @@ export const criarCliente = async (req, res, next) => {
 }
 
 export const editarCliente = async (req, res, next) => {
-  const listaCliente = await ClienteModel.findById(req.params.id)
-  if(!listaCliente){
-    return res.status(404).json({message: "Cliente não encontrado"})
-  }
   try{
     const rest = await ClienteModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
     res.status(200).json(rest)
