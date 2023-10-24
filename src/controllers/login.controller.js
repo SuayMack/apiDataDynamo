@@ -50,3 +50,15 @@ export const buscarUmLogin = async (req, res, next) => {
       next(errorHandler(404, 'Erro ao buscar um login!'))
   }
 }
+
+export const autenticarPorEmail = async (req, res) => {
+  try {
+    const usuario = await LoginModel.findOne({email: req.body.email})
+    if(usuario.email !== req.body.email || usuario.senha !== req.body.password){
+      throw new Error('Email ou senha incorretos')
+    }
+    res.status(204).json()
+  }catch (error) {
+    res.status(403).json(error.message)
+  }
+}
