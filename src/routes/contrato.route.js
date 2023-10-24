@@ -5,9 +5,9 @@ const router = express.Router()
 
 //rotas do usuário
 router.get('/',buscarTodosOsContratos)
-router.post('/post', criarContrato)
 router.get('/:id', buscarUmContrato)
-router.patch('/:id', editarContrato)
-router.delete('/:id', deletarContrato)
+router.post('/criar', criarContrato)
+router.patch('/editar/:id', editarContrato)
+router.delete('/delete/:id', deletarContrato)
 
 export default router
