@@ -1,5 +1,5 @@
 import express from 'express'
-import { criarCliente, buscarTodosOsClientes, buscarUmCliente, editarCliente, deletarCliente, buscarClientePorNome } from '../controllers/cliente.controller.js'
+import { criarCliente, buscarTodosOsClientes, buscarUmCliente, editarCliente, deletarCliente} from '../controllers/cliente.controller.js'
 
 const router = express.Router()
 
