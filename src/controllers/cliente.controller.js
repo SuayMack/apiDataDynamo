@@ -55,6 +55,6 @@ export const buscarUmCliente = async (req, res, next) => {
     }
     res.status(200).json(buscarUmCliente)
   }catch(error){
-    next(errorHandler(404, 'Erro ao buscar um cliente!'))
+    res.status(400).json(error.message)
   }
 }
