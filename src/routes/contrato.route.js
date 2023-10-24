@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/',buscarTodosOsContratos)
 router.get('/:id', buscarUmContrato)
 router.post('/criar', criarContrato)
-router.patch('/editar/:id', editarContrato)
+router.put('/editar/:id', editarContrato)
 router.delete('/delete/:id', deletarContrato)
 
 export default router
